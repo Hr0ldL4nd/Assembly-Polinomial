@@ -1,4 +1,4 @@
-#código - produto polinomial - Orlando Moreira de Melo Neto - Matrícula 539268
+#código - produto polinomial - Orlando Moreira
 
 #coeficientes do polinômio fixo dado pelo prof
 #estão em ordem do menor expoente pro maior
@@ -22,7 +22,7 @@ sw s3, 0(t0)
 addi t0, t0, -12 #coloca t0 para apontar pra posição de início do array
 add s0, zero, t0 #será o auxiliar que se desloca ao longo do array
 
-#coeficientes do polinômio dada a minha matrícula (539268)
+#coeficientes do polinômio dada a minha matrícula
 #estão em ordem do menor expoente pro maior 
 addi a0, zero, 8 #8
 addi a1, zero, 6 #6x
@@ -70,14 +70,14 @@ addi a5, zero, 0 #registrador auxiliar para fazer a soma desses dois valores, at
 ciclo:
     add s1, zero, t1 #resetando o ponteiro que se desloca nos valores do 2° polinômio
     add a2, zero, zero  #resetando o contador que controla o subciclo
-	bne a1, a6, sub_ciclo # se ainda não tivermos feito a multiplicação de todos os termos, vai
+    bne a1, a6, sub_ciclo # se ainda não tivermos feito a multiplicação de todos os termos, vai
     beq a1, a6, done      #caso contrário, acabou :)
 	
 
 sub_ciclo:
-	lw t3, 0(s0) #termo fixo do 1°
+    lw t3, 0(s0) #termo fixo do 1°
     lw t4, 0(s1) #termo móvel do 2°
-	mul a3, t3, t4 #termo fixo do 1° x termo móvel do 2°
+    mul a3, t3, t4 #termo fixo do 1° x termo móvel do 2°
     lw a4, 0(t2)   #carregando valor atual da posição do polinômio final
     add a5, a3, a4 #realizando a soma
     sw a5, 0(t2)   #atualizando o valor
